@@ -9,18 +9,20 @@ public class ReturnBook {
 
 
     BookRepository bookRepository = new BookRepository();
-    public void returnBook(){
-        System.out.println("which book: ");
+    public void input(){
+        System.out.print("which book: ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        System.out.println("which author: ");
+        System.out.print("which author: ");
         Scanner scanner1 = new Scanner(System.in);
         String author = scanner1.nextLine();
-        System.out.println("yearPublished: ");
+        System.out.print("yearPublished: ");
         Scanner scanner2 = new Scanner(System.in);
         String yearPublished = scanner2.nextLine();
-
-        bookRepository.books.add(new Book(name,author,yearPublished));
+        Book book = new Book(name,author,yearPublished);
+    }
+    public void returnBook(Book book){
+        bookRepository.books.add(book);
         System.out.println("Thank you for returning the book.");
     }
 }

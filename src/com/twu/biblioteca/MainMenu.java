@@ -11,6 +11,7 @@ public class MainMenu {
     ArrayList<Book> booksMenu = new ArrayList<Book>();
     PrintBookShelf printBookshelf = new PrintBookShelf();
     private String strQuit;
+
     public void excute(){
         String msg = printBookshelf.printHome();
 
@@ -36,10 +37,11 @@ public class MainMenu {
     }
 
     private void putInMenu(String str) {
+
         for(Book book: printBookshelf.books){
             if(book.getName().equals(str)){
                 booksMenu.add(book);
-                printBookshelf.books.remove(book);
+
                 System.out.println("Thank you! Enjoy the book");
                 System.out.print("continue or quit?(c/q):");
                 Scanner scanner = new Scanner(System.in);
