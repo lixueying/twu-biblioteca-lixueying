@@ -7,10 +7,8 @@ public class Book {
     private String name;
     private String author;
     private String yearPublished;
-    private String isbn;
 
-    public Book(String isbn, String name, String author, String yearPublished){
-        this.isbn = isbn;
+    public Book(String name, String author, String yearPublished){
         this.name = name;
         this.author = author;
         this.yearPublished = yearPublished;
@@ -40,11 +38,4 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 }
