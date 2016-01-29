@@ -20,9 +20,17 @@ public class ReturnBook {
         Scanner scanner2 = new Scanner(System.in);
         String yearPublished = scanner2.nextLine();
         Book book = new Book(name,author,yearPublished);
+        returnBook(book);
     }
     public void returnBook(Book book){
-        bookRepository.books.add(book);
-        System.out.println("Thank you for returning the book.");
+        for(Book book1:BibliotecaApp.books){
+            if(book.getName().equals(book1.getName())){
+                System.out.println("That is not a valid book to return.");
+                break;
+            }else {
+                bookRepository.books.add(book);
+                System.out.println("Thank you for returning the book.");
+            }
+        }
     }
 }

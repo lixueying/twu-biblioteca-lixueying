@@ -18,8 +18,14 @@ public class PrintBookShelfTest {
     }
 
     @Test
-    public void return_false_when_given_abc(){
+    public void should_return_false_when_given_abc(){
         boolean flag = printBookShelf.isInBookShelf("abc");
         assertThat(flag, is(false));
+    }
+
+    @Test
+    public void should_reduce_a_book(){
+        Book book = new Book("Refactoring","Martin Fowler", "1999-7-8");
+        printBookShelf.updateBooks(book);
     }
 }
