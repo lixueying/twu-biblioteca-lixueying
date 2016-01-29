@@ -6,12 +6,19 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static ArrayList<Book> books = new ArrayList<Book>();
+    ConsolePrinter consolePrinter = new ConsolePrinter();
 
-    public static void main(String[] args) {
+    public BibliotecaApp(ConsolePrinter consolePrinter) {
+        this.consolePrinter = consolePrinter;
+    }
 
+    public static void main(String arg[]) {
+
+        ConsolePrinter consolePrinter = new ConsolePrinter();
         ReturnBook returnBook = new ReturnBook();
         MainMenu mainMenu = new MainMenu();
-        System.out.println("Welcome to library!");
+
+        consolePrinter.print("Welcome to library!");
 
         books = tool();
 
