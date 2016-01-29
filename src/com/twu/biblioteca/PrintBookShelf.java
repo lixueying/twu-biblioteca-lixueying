@@ -8,13 +8,14 @@ import java.util.Scanner;
  */
 public class PrintBookShelf {
 
-    ArrayList<Book> books = new ArrayList<Book>();
+    //ArrayList<Book> books = new ArrayList<Book>();
     String str = null;
 
-    public String printBookShelf(){
-        BookRepository bookRepository = new BookRepository();
 
-        books = bookRepository.bookShelf();
+    public String printBookShelf(ArrayList<Book> books){
+        //BookRepository bookRepository = new BookRepository();
+
+        //books = bookRepository.bookShelf();
         System.out.println("List Books:");
         System.out.println();
         for(Book book: books){
@@ -29,7 +30,7 @@ public class PrintBookShelf {
     }
 
     public boolean isInBookShelf(String str){
-        for(Book book: books){
+        for(Book book: BibliotecaApp.books){
             if(book.getName().equals(str)){
                 return true;
             }
@@ -39,7 +40,7 @@ public class PrintBookShelf {
 
     public String bookDetails(String str){
         String msg = null;
-        for(Book book: books) {
+        for(Book book: BibliotecaApp.books) {
             if (book.getName().equals(str)) {
                 System.out.println(book.getName() + "    " + book.getAuthor() + "    " + book.getYearPublished());
                 System.out.print("Do you want to check out this book?(y/n): ");
@@ -50,14 +51,19 @@ public class PrintBookShelf {
         return msg;
     }
 
-    public String printHome(){
+    public String printHome(ArrayList<Book> books){
         String msg = "";
-        String str = printBookShelf();
+        String str = printBookShelf(books);
         if(isInBookShelf(str)){
             msg = bookDetails(str);
         }else{
             System.out.println("Select a valid option!");
         }
         return msg;
+    }
+
+    public ArrayList<Book> updateBooks(Book book){
+        BibliotecaApp.books.remove(book);
+        return BibliotecaApp.books;
     }
 }

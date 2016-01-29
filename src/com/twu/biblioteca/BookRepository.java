@@ -16,8 +16,6 @@ public class BookRepository {
         return books;
     }
 
-    public void updateBooks(Book book){
-        books.remove(book);
-    }
+
 
 }
