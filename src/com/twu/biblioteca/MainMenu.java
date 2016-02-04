@@ -1,5 +1,13 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Book.Book;
+import com.twu.biblioteca.Book.BookMenu;
+import com.twu.biblioteca.Book.BookRepository;
+import com.twu.biblioteca.Book.ReturnBook;
+import com.twu.biblioteca.Movie.Movie;
+import com.twu.biblioteca.Movie.MovieRepository;
+import com.twu.biblioteca.Movie.MoviesMenu;
+
 import java.util.ArrayList;
 
 /**

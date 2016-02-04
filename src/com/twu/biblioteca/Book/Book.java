@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Book;
 
 /**
  * Created by lixueying on 16/1/29.

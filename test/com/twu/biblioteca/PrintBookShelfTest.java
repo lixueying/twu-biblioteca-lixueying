@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Book.Book;
+import com.twu.biblioteca.Book.PrintBookShelf;
 import org.junit.Before;
 import org.junit.Test;
 

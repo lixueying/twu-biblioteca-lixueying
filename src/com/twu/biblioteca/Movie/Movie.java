@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Movie;
 
 /**
  * Created by lixueying on 16/2/2.

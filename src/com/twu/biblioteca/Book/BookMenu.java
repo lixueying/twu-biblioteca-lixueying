@@ -1,7 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Book;
+
+import com.twu.biblioteca.BibliotecaApp;
+import com.twu.biblioteca.ConsolePrinter;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by lixueying on 16/1/29.

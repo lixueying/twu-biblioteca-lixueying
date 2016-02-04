@@ -1,4 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Movie;
+
+import com.twu.biblioteca.BibliotecaApp;
+import com.twu.biblioteca.ConsolePrinter;
+import com.twu.biblioteca.Movie.Movie;
 
 import java.util.ArrayList;
 

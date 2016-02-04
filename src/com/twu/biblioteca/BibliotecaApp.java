@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Book.Book;
+import com.twu.biblioteca.Movie.Movie;
+
 import java.util.ArrayList;
 
 public class BibliotecaApp {

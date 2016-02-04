@@ -1,6 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Book;
 
-import java.util.Scanner;
+import com.twu.biblioteca.BibliotecaApp;
+import com.twu.biblioteca.Book.Book;
+import com.twu.biblioteca.Book.BookRepository;
+import com.twu.biblioteca.ConsolePrinter;
 
 /**
  * Created by lixueying on 16/1/29.
@@ -26,7 +29,7 @@ public class ReturnBook {
     }
 
     public void returnBook(Book book){
-        for(Book book1:BibliotecaApp.books){
+        for(Book book1: BibliotecaApp.books){
             if(book.getName().equals(book1.getName())){
                 consolePrinter.println("That is not a valid book to return.");
                 break;
