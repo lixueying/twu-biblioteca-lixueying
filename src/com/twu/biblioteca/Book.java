@@ -38,4 +38,8 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
+    public String getDetailsAsString() {
+        return String.format("%-30.30s | %-30.30s | %d", name, author, yearPublished);
+    }
+
 }

@@ -15,7 +15,4 @@ public class BookRepository {
         books.add(new Book("The Art of UNIX Programming", "Eric S. Raymond", "2003-9-17"));
         return books;
     }
-
-
-
 }

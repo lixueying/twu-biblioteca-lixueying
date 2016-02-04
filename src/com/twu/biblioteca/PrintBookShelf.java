@@ -8,24 +8,21 @@ import java.util.Scanner;
  */
 public class PrintBookShelf {
 
-    //ArrayList<Book> books = new ArrayList<Book>();
-    String str = null;
+    String str = "";
+    ConsolePrinter consolePrinter = new ConsolePrinter();
 
 
     public String printBookShelf(ArrayList<Book> books){
-        //BookRepository bookRepository = new BookRepository();
 
-        //books = bookRepository.bookShelf();
-        System.out.println("List Books:");
+        consolePrinter.println("List Books:");
         System.out.println();
         for(Book book: books){
-            System.out.println(book.getName());
+            consolePrinter.println(book.getName());
         }
 
         System.out.println();
-        System.out.print("Input the book name to look the Book Details: ");
-        Scanner scanner = new Scanner(System.in);
-        str = scanner.nextLine();
+        consolePrinter.print("Input the book name to look the Book Details: ");
+        str = consolePrinter.input();
         return str;
     }
 
@@ -42,10 +39,9 @@ public class PrintBookShelf {
         String msg = null;
         for(Book book: BibliotecaApp.books) {
             if (book.getName().equals(str)) {
-                System.out.println(book.getName() + "    " + book.getAuthor() + "    " + book.getYearPublished());
-                System.out.print("Do you want to check out this book?(y/n): ");
-                Scanner scanner = new Scanner(System.in);
-                msg = scanner.next();
+                consolePrinter.println(book.getName() + "    " + book.getAuthor() + "    " + book.getYearPublished());
+                consolePrinter.print("Do you want to check out this book?(y/n): ");
+                msg = consolePrinter.input();
             }
         }
         return msg;
@@ -57,7 +53,7 @@ public class PrintBookShelf {
         if(isInBookShelf(str)){
             msg = bookDetails(str);
         }else{
-            System.out.println("Select a valid option!");
+            consolePrinter.println("Select a valid option!");
         }
         return msg;
     }
