@@ -1,7 +1,7 @@
 package com.twu.biblioteca.Movie;
 
 import com.twu.biblioteca.BibliotecaApp;
-import com.twu.biblioteca.ConsolePrinter;
+import com.twu.biblioteca.Console;
 
 import java.util.ArrayList;
 
@@ -10,21 +10,21 @@ import java.util.ArrayList;
  */
 public class MoviesMenu {
     private CheckoutMovie checkoutMovie = new CheckoutMovie();
-    private ConsolePrinter consolePrinter = new ConsolePrinter();
+    private Console console = new Console();
     public void excute(ArrayList<Movie> movies){
         System.out.println("List Movies:");
         System.out.println();
         for(Movie movie: movies){
-            consolePrinter.println(movie.getName());
+            console.println(movie.getName());
         }
 
-        consolePrinter.print("choose movie to check out: ");
-        String str = consolePrinter.input();
+        console.print("choose movie to check out: ");
+        String str = console.input();
         if(checkoutMovie.isInMovieShelf(str)){
             String strQuit = checkoutMovie.putInMovieMenu(str);
             isQuit(strQuit);
         }else {
-            consolePrinter.println("no this movie");
+            console.println("no this movie");
         }
     }
 

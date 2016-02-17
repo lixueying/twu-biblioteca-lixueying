@@ -1,8 +1,7 @@
 package com.twu.biblioteca.Book;
 
 import com.twu.biblioteca.BibliotecaApp;
-import com.twu.biblioteca.Book.Book;
-import com.twu.biblioteca.ConsolePrinter;
+import com.twu.biblioteca.Console;
 
 import java.util.ArrayList;
 
@@ -12,24 +11,25 @@ import java.util.ArrayList;
 public class PrintBookShelf {
 
     String str = "";
-    ConsolePrinter consolePrinter = new ConsolePrinter();
+    Console console = new Console();
+
+    public PrintBookShelf(){}
+    public PrintBookShelf(Console console) {
+        this.console = console;
+    }
 
 
-    public String printBookShelf(ArrayList<Book> books){
+    public void printBookShelf(ArrayList<Book> books){
 
-        consolePrinter.println("List Books:");
-        System.out.println();
+        console.println("List Books:");
+        console.println("");
         for(Book book: books){
-            consolePrinter.println(book.getName());
+            console.println(book.getName());
         }
-
-        System.out.println();
-        consolePrinter.print("Input the book name to look the Book Details: ");
-        str = consolePrinter.input();
-        return str;
     }
 
     public boolean isInBookShelf(String str){
+
         for(Book book: BibliotecaApp.books){
             if(book.getName().equals(str)){
                 return true;
@@ -38,25 +38,26 @@ public class PrintBookShelf {
         return false;
     }
 
-    public String bookDetails(String str){
-        String msg = null;
+    public void bookDetails(String str){
         for(Book book: BibliotecaApp.books) {
             if (book.getName().equals(str)) {
-                consolePrinter.println(book.getName() + "    " + book.getAuthor() + "    " + book.getYearPublished());
-                consolePrinter.print("Do you want to check out this book?(y/n): ");
-                msg = consolePrinter.input();
+                console.println(book.getName() + "    " + book.getAuthor() + "    " + book.getYearPublished());
             }
         }
-        return msg;
     }
 
     public String printHome(ArrayList<Book> books){
         String msg = "";
-        String str = printBookShelf(books);
+        printBookShelf(books);
+        console.println("");
+        console.print("Input the book name to look the Book Details: ");
+        str = console.input();
         if(isInBookShelf(str)){
-            msg = bookDetails(str);
+            bookDetails(str);
+            console.print("Do you want to check out this book?(y/n): ");
+            msg = console.input();
         }else{
-            consolePrinter.println("Select a valid option!");
+            console.println("Select a valid option!");
         }
         return msg;
     }

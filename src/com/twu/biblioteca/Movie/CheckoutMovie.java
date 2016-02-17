@@ -1,8 +1,7 @@
 package com.twu.biblioteca.Movie;
 
 import com.twu.biblioteca.BibliotecaApp;
-import com.twu.biblioteca.ConsolePrinter;
-import com.twu.biblioteca.Movie.Movie;
+import com.twu.biblioteca.Console;
 
 import java.util.ArrayList;
 
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  */
 public class CheckoutMovie {
     private ArrayList<Movie> movieMenu = new ArrayList<Movie>();
-    private ConsolePrinter consolePrinter = new ConsolePrinter();
+    private Console console = new Console();
 
     public boolean isInMovieShelf(String str){
         for(Movie movie: BibliotecaApp.movies){
@@ -27,12 +26,12 @@ public class CheckoutMovie {
             if(movie.getName().equals(str)){
                 movieMenu.add(movie);
                 BibliotecaApp.movies = updateMovies(movie);
-                consolePrinter.println("Thank you! Enjoy the movie");
+                console.println("Thank you! Enjoy the movie");
                 break;
             }
         }
-        consolePrinter.print("continue or quit?(c/q):");
-        String strQuit = consolePrinter.input();
+        console.print("continue or quit?(c/q):");
+        String strQuit = console.input();
         return strQuit;
     }
 

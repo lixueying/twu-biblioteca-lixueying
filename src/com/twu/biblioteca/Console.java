@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by lixueying on 16/1/29.
  */
-public class ConsolePrinter {
+public class Console {
 
     public void print(String content) {
         System.out.print(content);

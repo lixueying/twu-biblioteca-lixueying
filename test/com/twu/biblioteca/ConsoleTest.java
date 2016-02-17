@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by lixueying on 16/1/29.
  */
-public class ConsolePrinterTest {
+public class ConsoleTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
@@ -22,7 +22,7 @@ public class ConsolePrinterTest {
 
     @Test
     public void shouldPrintContentToOutputStreamWhenIWantToPrintIt() {
-        ConsolePrinter printer = new ConsolePrinter();
+        Console printer = new Console();
 
         printer.print("print me to console");
 
@@ -31,7 +31,7 @@ public class ConsolePrinterTest {
 
     @Test
     public void shouldCanPrintSpecialCharacter() {
-        ConsolePrinter printer = new ConsolePrinter();
+        Console printer = new Console();
 
         printer.print("@#$%^&*\n");
 

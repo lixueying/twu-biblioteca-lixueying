@@ -10,18 +10,18 @@ public class BibliotecaApp {
     public static ArrayList<Book> books = new ArrayList<Book>();
     public static ArrayList<Movie> movies = new ArrayList<Movie>();
 
-    ConsolePrinter consolePrinter = new ConsolePrinter();
+    Console console = new Console();
 
-    public BibliotecaApp(ConsolePrinter consolePrinter) {
-        this.consolePrinter = consolePrinter;
+    public BibliotecaApp(Console console) {
+        this.console = console;
     }
 
     public static void main(String arg[]) {
 
         MainMenu mainMenu = new MainMenu();
-        ConsolePrinter consolePrinter = new ConsolePrinter();
+        Console console = new Console();
 
-        consolePrinter.print("Welcome to library!");
+        console.print("Welcome to library!");
 
         mainMenu.showMainMenu();
 

@@ -1,7 +1,8 @@
 package com.twu.biblioteca.Book;
 
 import com.twu.biblioteca.BibliotecaApp;
-import com.twu.biblioteca.ConsolePrinter;
+import com.twu.biblioteca.Console;
+import com.twu.biblioteca.User.Login;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,8 @@ public class BookMenu {
 
     ArrayList<Book> booksMenu = new ArrayList<Book>();
     PrintBookShelf printBookshelf = new PrintBookShelf();
-    ConsolePrinter consolePrinter = new ConsolePrinter();
+    Login login = new Login();
+    Console console = new Console();
 
     private String strQuit;
     private String msg;
@@ -21,8 +23,8 @@ public class BookMenu {
         msg = printBookshelf.printHome(books);
 
         while(msg.equals("n") || msg.equals("N") || msg.equals("")){
-            consolePrinter.print("Do you want to quit(y/n): ");
-            strQuit = consolePrinter.input();
+            console.print("Do you want to quit(y/n): ");
+            strQuit = console.input();
             if(strQuit.equals("y")){
                 //QUIT
                 System.out.println("QUIT");
@@ -31,6 +33,7 @@ public class BookMenu {
                 msg = printBookshelf.printHome(books);
             }
         }
+        login.login();
         isCheckOut();
 
     }
@@ -40,7 +43,7 @@ public class BookMenu {
             //放进购物车
             putInMenu(printBookshelf.str);
         }else if (!msg.equals("y") && !msg.equals("n")){
-            consolePrinter.println("please input right word!");
+            console.println("please input right word!");
         }
     }
 
@@ -51,9 +54,9 @@ public class BookMenu {
                 booksMenu.add(book);
                 BibliotecaApp.books = printBookshelf.updateBooks(book);
 
-                consolePrinter.println("Thank you! Enjoy the book");
-                consolePrinter.print("continue or quit?(c/q):");
-                strQuit = consolePrinter.input();
+                console.println("Thank you! Enjoy the book");
+                console.print("continue or quit?(c/q):");
+                strQuit = console.input();
 
                 if(strQuit.equals("q")){
                     //QUIT

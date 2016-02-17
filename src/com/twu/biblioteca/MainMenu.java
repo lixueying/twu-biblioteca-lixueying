@@ -15,18 +15,18 @@ import java.util.ArrayList;
  */
 public class MainMenu {
 
-    ConsolePrinter consolePrinter = new ConsolePrinter();
+    Console console = new Console();
     ReturnBook returnBook = new ReturnBook();
     BookMenu bookMenu = new BookMenu();
     MoviesMenu moviesMenu = new MoviesMenu();
 
     public void showMainMenu(){
 
-        consolePrinter.print("1.book or 2.movie?(1/2): ");
+        console.print("1.book or 2.movie?(1/2): ");
 
-        if(consolePrinter.input().equals("1")){
+        if(console.input().equals("1")){
             BibliotecaApp.books = bookTool();
-            consolePrinter.print("return book?(y/n): ");
+            console.print("return book?(y/n): ");
             judge();
         }else{
             BibliotecaApp.movies = movieTool();
@@ -36,7 +36,7 @@ public class MainMenu {
 
     public void judge(){
 
-        if(consolePrinter.input().equals("y")){
+        if(console.input().equals("y")){
             returnBook.input();
         }else {
             bookMenu.excute(BibliotecaApp.books);

@@ -1,27 +1,32 @@
 package com.twu.biblioteca.Book;
 
 import com.twu.biblioteca.BibliotecaApp;
-import com.twu.biblioteca.Book.Book;
-import com.twu.biblioteca.Book.BookRepository;
-import com.twu.biblioteca.ConsolePrinter;
+import com.twu.biblioteca.Console;
+import com.twu.biblioteca.User.Login;
 
 /**
  * Created by lixueying on 16/1/29.
  */
 public class ReturnBook {
 
-    ConsolePrinter consolePrinter = new ConsolePrinter();
+    Console console = new Console();
     BookRepository bookRepository = new BookRepository();
+    Login login = new Login();
+    public ReturnBook(){}
+    public ReturnBook(Console console) {
+        this.console = console;
+    }
 
     public void input(){
-        consolePrinter.print("which book: ");
-        String name = consolePrinter.input();
+        login.login();
+        console.print("which book: ");
+        String name = console.input();
 
-        consolePrinter.print("which author: ");
-        String author = consolePrinter.input();
+        console.print("which author: ");
+        String author = console.input();
 
-        consolePrinter.print("yearPublished: ");
-        String yearPublished = consolePrinter.input();
+        console.print("yearPublished: ");
+        String yearPublished = console.input();
 
         Book book = new Book(name,author,yearPublished);
 
@@ -31,11 +36,12 @@ public class ReturnBook {
     public void returnBook(Book book){
         for(Book book1: BibliotecaApp.books){
             if(book.getName().equals(book1.getName())){
-                consolePrinter.println("That is not a valid book to return.");
+                console.println("That is not a valid book to return.");
                 break;
             }else {
                 bookRepository.books.add(book);
-                consolePrinter.println("Thank you for returning the book.");
+                console.println("Thank you for returning the book.");
+                break;
             }
         }
     }
