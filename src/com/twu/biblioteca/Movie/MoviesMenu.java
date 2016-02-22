@@ -12,12 +12,16 @@ public class MoviesMenu {
     private CheckoutMovie checkoutMovie = new CheckoutMovie();
     private Console console = new Console();
     public void excute(ArrayList<Movie> movies){
-        System.out.println("List Movies:");
-        System.out.println();
+        console.println("List Movies:");
+        console.println("");
         for(Movie movie: movies){
             console.println(movie.getName());
         }
 
+        chooseMovie();
+    }
+
+    public void chooseMovie(){
         console.print("choose movie to check out: ");
         String str = console.input();
         if(checkoutMovie.isInMovieShelf(str)){
@@ -31,11 +35,10 @@ public class MoviesMenu {
     public void isQuit(String strQuit){
         if(strQuit.equals("q")){
             //QUIT
-            System.out.println("QUIT");
+            console.println("QUIT");
         }else{
             excute(BibliotecaApp.movies);
         }
     }
-
 
 }

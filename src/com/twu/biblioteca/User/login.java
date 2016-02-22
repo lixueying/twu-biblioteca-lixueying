@@ -45,7 +45,6 @@ public class Login {
         console.println("show your message");
         userRepository.usersInformation = userRepository.usersInformation();
         for(User user1: userRepository.usersInformation){
-            console.println(user1.getNumber());
             if(user1.getNumber().equals(user.getNumber())){
                 console.println(user1.getName() + " | " +user1.getEmail() + " | " + user1.getAddress() + " | " +user1.getPhoneNumber());
             }
